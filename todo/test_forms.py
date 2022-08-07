@@ -13,7 +13,7 @@ class TestItemForm(TestCase):
 
 
     def test_done_field_is_not_required(self):
-        form = ItemForm({'name', 'Test Todo Item'})
+        form = ItemForm({'name': 'Test Todo Item'})
         self.assertTrue(form.is_valid())
     
 

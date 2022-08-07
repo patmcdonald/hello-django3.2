@@ -1,7 +1,10 @@
-# from django.test import TestCase
+from django.test import TestCase
+from .models import Item
 
 
-# class TestDjango(TestCase):
-    
-#     def test_this_thing_works1(self):
-#         self.assertEqual(1, 1)
+class TestViews(TestCase):
+
+    def test_get_todo_list(self):
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'todo/todo_list.html')
