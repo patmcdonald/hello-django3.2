@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import os
+import os, dj_database_url
 from pathlib import Path
 
 from django.core.management.utils import get_random_secret_key
@@ -78,11 +78,15 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse('postgres://gmfqavwinulfbg:7f91dee1b5d5dcbad64afeca34c1569fab9e2231216e92d212d9226a52f1ffc2@ec2-54-75-26-218.eu-west-1.compute.amazonaws.com:5432/d8519195v5mlhd')
 }
 
 
