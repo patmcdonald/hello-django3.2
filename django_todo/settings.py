@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", '5&)#(o34*f5a!!2&-ml7rbc)k$4&g%jhbx!2@$w0+\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-todo-pat.herokuapp.com']
 
 
 # Application definition
